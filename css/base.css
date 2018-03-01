@@ -21,19 +21,19 @@ img {
 .game-goods-wrap {
   position: absolute;
   margin: 0 auto;
-  top: 12%;
+  top: 52.5%;
   left: 0;
   right: 0;
   bottom: 0;
   width: 64%;
-  height: 50%;
+  height: 30%;
   border-top-left-radius: 0.1875rem;
   border-top-right-radius: 0.1875rem;
   border-bottom-left-radius: 0.25rem;
   border-bottom-right-radius: 0.25rem;
   overflow: hidden;
 }
-.game-goods-wrap:before {
+/*.game-goods-wrap:before {
   position: absolute;
   top: -1PX;
   right: 0;
@@ -60,7 +60,7 @@ img {
   content: "";
   border-bottom-left-radius: 0.25rem;
   border-bottom-right-radius: 0.25rem;
-}
+}*/
 .game-goods-list {
   height: 100%;
   overflow: hidden;
@@ -97,7 +97,8 @@ img {
   -o-transform: translateX(-100%);
 }
 .game-goods-box {
-  height: 70%;
+  height: 100%;
+  margin: 0;
   position: absolute;
   top: 0;
   right: 0;
@@ -122,7 +123,7 @@ img {
   bottom: 0;
   left: 0;
   margin: auto;
-  height: 90%;
+  height: 100%;
   width: auto;
 }
 .play {
