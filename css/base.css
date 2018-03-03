@@ -14,9 +14,20 @@ img {
 .game-content {
   position: relative;
   width: 100%;
+  height: 100%;
 }
 .game-content img {
   width: 100%;
+}
+#game_bg{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: url(../img/2p.png) no-repeat;
+	background-size: 100% 100%;
+	z-index: 10;
 }
 .game-goods-wrap {
   position: absolute;
@@ -64,6 +75,7 @@ img {
 .game-goods-list {
   height: 100%;
   overflow: hidden;
+  display: none;
 }
 .game-goods {
   position: absolute;
@@ -146,19 +158,54 @@ img {
   width: 40%;
   height: 32%;
 }
-.game-btn {
-  position: absolute;
-  margin: 0 auto;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 40%;
-  height: 32%;
-}
+
 .game-prize {
   position: absolute;
   top: 20%;
   right: 2%;
   width: 12%;
   height: 30%;
+}
+#game-box{
+	position: absolute;
+  margin: 0 auto;
+  top: 51.5%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 70%;
+  height: 32%;
+}
+#game-btn-wraper{
+	position: absolute;
+  margin: 0 auto;
+  top: 51.5%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 70%;
+  height: 32%;
+  z-index: 100;
+}
+#game-btn {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 70%;
+}
+
+/*适配iPhone X H5页面*/
+@media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+	#game-btn {
+	  position: absolute;
+	  margin: auto;
+	  top: 0;
+	  left: 0;
+	  right: 0;
+	  bottom: 0;
+	  width: 70%;
+	}
 }

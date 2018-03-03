@@ -1,362 +1,470 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="has-topbar has-bottombar">
 
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1,user-scalable=no">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1,user-scalable=no">
 
-	<meta charset="UTF-8">
-	<title>Document</title>
-	<link rel="stylesheet" href="css/base.css">
-	<style type="text/css">
-		
-		@media screen and (orientation: portrait) {
-		      html{
-			     
-				 width : 100% ;
-				 height : 100% ;
-				  background-color: white ;
-				  overflow-y : scroll;
-			  }
-			  body{
-			     
-			     width : 100% ;
-				 height : 100% ;
-				 background-color: white ;
-				 overflow-y : scroll;
-			  }
-			  
-			  #orientationContainer{
-			     position : absolute ;
-				  overflow : hidden;
-				 background-color: white ;
-			  }
-		} 
-		@media screen and (orientation: landscape) {
-		       html{
-			   
-				 width : 100% ;
-				 height : 100% ;
-				 background-color: white ;
-			  }
-			  
-			  #orientationContainer{
-			     position : absolute ;
-				 top : 0 ; 
-				 left : 0 ;
-				 width : 100% ;
-				 height : 100% ;
-				 background-color: white ;
-			  }
-			  
-			   body{
-			      width : 100% ;
-				 height : 100% ;
-				 background-color: white ;
-			  }
-		}
-	</style>
-</head>
-<body>
-	<div id="orientationContainer">
-		<!--<a class="game-header" href="javascript:void(0);" >
-		    <img src="img/1p.png">
-		</a>-->
-		<div class="game-content">
-		    <img src="img/2p.png">
-		    <div class="game-goods-wrap">
-		        <div class="game-goods-list">
-		            <div class="game-goods">
-		                <div class="game-goods-box" id="game1">
-		                    <ul class="game-goods-ul" style="">
-		                        
-		                    </ul>
-		                </div>
-		            </div>
-		            <div class="game-goods">
-		                <div class="game-goods-box" id="game2">
-		                    <ul class="game-goods-ul" style="">
-		                        
-		                    </ul>
-		                </div>
-		            </div>
-		            <div class="game-goods">
-		                <div class="game-goods-box" id="game3">
-		                    <ul class="game-goods-ul">
-		                       
-		                    </ul>
-		                </div>
-		            </div>
-		        </div>
-		    </div>
-		    <a class="game-rule" href="javascript:void(0);"></a>
-		    <span class="game-btn"></span>
-		    <a class="game-prize" href="javascript:void(0);"></a>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<link rel="stylesheet" href="css/base.css">
+		<style type="text/css">
+			@media screen and (orientation: portrait) {
+				html {
+					width: 100%;
+					height: 100%;
+					background-color: white;
+					overflow-y: scroll;
+				}
+				body {
+					width: 100%;
+					height: 100%;
+					background-color: white;
+					overflow-y: scroll;
+				}
+				#orientationContainer {
+					position: absolute;
+					overflow: hidden;
+					background-color: white;
+				}
+				#tips-wraper{
+					width: 100%;
+					height: 100%;
+					position: fixed;
+					top: 0;
+					left: 0;
+					z-index: 999;
+					background: rgba(0,0,0,0.6);
+					display: none;
+				}
+				#tips-wraper img{
+					position: fixed;
+					top: 0;
+					left: 0;
+					right: 0;
+					bottom: 0;
+					margin: auto;
+					height: 32%;
+					z-index: 99999999;
+					/*transform: rotate(90deg);*/
+				}
+			}
+			
+			@media screen and (orientation: landscape) {
+				html {
+					width: 100%;
+					height: 100%;
+					background-color: white;
+				}
+				#orientationContainer {
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					background-color: white;
+				}
+				body {
+					width: 100%;
+					height: 100%;
+					background-color: white;
+				}
+				#tips-wraper{
+					width: 100%;
+					height: 100%;
+					position: fixed;
+					top: 0;
+					left: 0;
+					z-index: 999;
+					background: rgba(0,0,0,0.6);
+					display: none;
+				}
+				#tips-wraper img{
+					position: fixed;
+					top: 0;
+					left: 0;
+					right: 0;
+					bottom: 0;
+					margin: auto;
+					width: 32%;
+					z-index: 99999999;
+				}
+			}
+			
+		</style>
+	</head>
+
+	<body>
+		<div id="orientationContainer">
+
+			<div class="game-content">
+				<div id="game_bg"></div>
+				<img src="img/game-box.png" alt="" id="game-box" />
+				<div class="game-goods-wrap">
+					<div class="game-goods-list">
+						<div class="game-goods">
+							<div class="game-goods-box" id="game1">
+								<ul class="game-goods-ul" style="">
+
+								</ul>
+							</div>
+						</div>
+						<div class="game-goods">
+							<div class="game-goods-box" id="game2">
+								<ul class="game-goods-ul" style="">
+
+								</ul>
+							</div>
+						</div>
+						<div class="game-goods">
+							<div class="game-goods-box" id="game3">
+								<ul class="game-goods-ul">
+
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="game-btn-wraper">
+					<img src="img/start.png" alt="" class="game-btn" id="game-btn"/>
+				</div>
+				
+				
+				
+			</div>
 		</div>
-	</div>
-		
-	
-	<script type="text/javascript" src="js/jquery.min.js"></script>
-	<script type="text/javascript">
-	
-		$.extend({
-		    luckGame: function(options) {
-		    	var defaults = {
-		    	        'gameLen': '18',
-		    	        'game_pagesize':10,//生成多少圈同样的东西
-		    	        'zj_arr': { //中奖数组，第一个表示是否中奖，第二个中奖号码
-		    	        	'is_win':1,
-		    	        	'number':17
-		    	        }
-		    	    };
-		         var settings = $.extend(defaults, options);
-		         w_config={
-		         	'w':$(window).width(),
-		         	'h':$(window).height()
-		         }
-		         var gameArr=[];
-		         var gameLen=settings.gameLen;
-		         var game_list_h='';
-		         var game_init=[];
-		         var game_list_item_h=0;
-
-		          //每次进来随机3个数字，来启动当前的选择的状态
-		          for (var i = 0; i < 3; i++) {
-		          	
-		          	game_init.push(Math.floor(Math.random() * gameLen));
-		          }
-		          createGame();
-		          $(window).resize(function(){
-		         	
-		         	 createGame();
-		         })
-		          function createGame(){
-		          	getHeight();
-		          	setLi();
-		          	pushLi(gameArr);
-		          	start();
-		          }
-
-
-		          function getHeight(){
-		          	w_config={
-		          		'w':$(window).width(),
-		          		'h':$(window).height()
-		          	}
-		          	 game_list_item_h=(w_config.w*320/750*0.5*0.8).toFixed(2);
-		          }
-
-
-		          //设置奖品
-		          function setLi(){
-		          	
-		          	for (var j = 1; j <= settings.game_pagesize; j++) {
-		          		for (var i = 1; i <= gameLen; i++) {
-		          			gameArr.push({'type':j,'index':i,'src1':'img/'+i+'.png','src2':'img/'+i+'f.png','src3':'img/'+i+'t.png'});
-		          		}
-		          	}
-
-		          }
-		          //写入，初始化奖品的滚动
-		          function pushLi(arr){
-		          	console.log(game_list_item_h);
-		          	var html_str1='';
-		          	var html_str2='';
-		          	var html_str3='';
-		          	for (var i = 0; i < arr.length; i++) {
-		          		html_str1+='<li style="height:'+game_list_item_h+'px" data-index="'+arr[i]['index']+'" data-type="'+arr[i]['type']+'"><img src="'+arr[i]['src1']+'"></li>';
-		          		html_str2+='<li style="height:'+game_list_item_h+'px" data-index="'+arr[i]['index']+'" data-type="'+arr[i]['type']+'"><img src="'+arr[i]['src2']+'"></li>';
-		          		html_str3+='<li style="height:'+game_list_item_h+'px" data-index="'+arr[i]['index']+'" data-type="'+arr[i]['type']+'"><img src="'+arr[i]['src3']+'"></li>';
-		          	}
-		          	$(".game-goods-ul").each(function(e){
-		          		$("#game1 .game-goods-ul").empty().append(html_str1);
-		          		$("#game2 .game-goods-ul").empty().append(html_str2);
-		          		$("#game3 .game-goods-ul").empty().append(html_str3);
-		          		game_list_h=$(this).height();
-		          		console.log('game_list_item_h',game_init);
-		          		y=game_list_item_h*game_init[e];
-		          		
-		          		$(this).css({
-		          			'transition-duration': '0ms',
-		          			'transform':'translate(0px, -'+y+'px) translateZ(0px)'
-		          		})
-		          	});
-		          	
-		          	
-		          }
-		          
-		          function start(){
-		          	$(".game-btn").click(function(){
-						
-		          		//如果中奖
-		          		if(settings.zj_arr.is_win==1)
-		          		{
-		          			
-		          			$(".game-goods-ul").each(function(e){
-
-		          				setTimeout(function(){
-		          					y=(settings.zj_arr.number+settings.gameLen*(settings.game_pagesize-1))*game_list_item_h;
-		          					$(".game-goods-ul").eq(e).css({
-		          						'transition-duration': '5000ms',
-		          						'transform':'translate(0px, -'+y+'px) translateZ(0px)'
-		          					})
-		          				}, e*300);
-		          				//判断最后面是否完毕
-		          				$("#game3").find(".game-goods-ul").on("webkitTransitionEnd", function() {
-		          					y=settings.zj_arr.number*game_list_item_h;
-		          				    $(".game-goods-ul").css({
-		          				    	'transition-duration': '0ms',
-		          				    	'transform':'translate(0px, -'+y+'px) translateZ(0px)'
-		          				    })
-		          				    $("#game3").find(".game-goods-ul").unbind("webkitTransitionEnd");
-		          				})
-		          			})
-		          			
-		          		}else
-		          		{
-		          			
-		          			numrand=randNum2();
-		          			console.log(numrand);
-		          			//不中奖的时候
-		          			$(".game-goods-ul").each(function(e){
-		          				y2=(numrand[0])*game_list_item_h;
-		          				y3=(numrand[1])*game_list_item_h;
-		          				y4=(numrand[2])*game_list_item_h;
-		          				setTimeout(function(){
-		          					y=(numrand[e]+settings.gameLen*(settings.game_pagesize-1))*game_list_item_h;
-		          					$(".game-goods-ul").eq(e).css({
-		          						'transition-duration': '5000ms',
-		          						'transform':'translate(0px, -'+y+'px) translateZ(0px)'
-		          					})
-		          				}, e*300);
-		          				//判断最后面是否完毕
-		          				$("#game3").find(".game-goods-ul").on("webkitTransitionEnd", function() {
-		          					
-		          				    $(".game-goods-ul").eq(2).css({
-		          				    	'transition-duration': '00ms',
-		          				    	'transform':'translate(0px, -'+y4+'px) translateZ(0px)'
-		          				    })
-		          				    $("#game3").find(".game-goods-ul").unbind("webkitTransitionEnd");
-		          				})
-		          				$("#game2").find(".game-goods-ul").on("webkitTransitionEnd", function() {
-		          					
-		          				    $(".game-goods-ul").eq(1).css({
-		          				    	'transition-duration': '00ms',
-		          				    	'transform':'translate(0px, -'+y3+'px) translateZ(0px)'
-		          				    })
-		          				    $("#game2").find(".game-goods-ul").unbind("webkitTransitionEnd");
-		          				})
-		          				$("#game1").find(".game-goods-ul").on("webkitTransitionEnd", function() {
-		          					
-		          				    $(".game-goods-ul").eq(0).css({
-		          				    	'transition-duration': '00ms',
-		          				    	'transform':'translate(0px, -'+y2+'px) translateZ(0px)'
-		          				    })
-		          				    $("#game1").find(".game-goods-ul").unbind("webkitTransitionEnd");
-		          				})
-		          			})
-
-		          		}
-		          		
-		          		
-		          	})
-		          }
-		          function randNum2(){
-		          	a=Math.floor(Math.random() * gameLen);
-		          	b=Math.floor(Math.random() * gameLen);
-		          	c=Math.floor(Math.random() * gameLen);
-		          	arr=[];
-		          	if(a==b)
-		          	{
-		          		return randNum2();
-		          	}else
-		          	{
-		          		return arr=[a,b,c];
-		          	}
-		          }
-		    }
-		})
-		
-		$(function(){
-			  
-			 var random_num = Math.floor(Math.random() * 2);
-			 console.log(random_num);
-			 $.luckGame({
-			 	'zj_arr': {
-			 		'is_win':1,
-			 		'number':random_num//从0算起，就是10了(控制第几个中奖)
-			 	},
-			 	gameLen:9,//产品抽奖数量，
-			 	game_pagesize:9
-			 });
-				
-				
-		})
-		
-	</script>
-	<script type="text/javascript">
-		//判断屏幕方向
-//		if(window.orientation==90||window.orientation==-90){
-//		    alert("横屏状态！")
-//		}
-		
-//		//监听屏幕方向
-//		window.onorientationchange = function(){ 
-//		    switch(window.orientation){ 
-//		        case -90: 
-//		        case 90: 
-////		            alert("横屏:" + window.orientation);
-//		        case 0: 
-//		        case 180: 
-////		             alert("竖屏:" + window.orientation);
-//		        break; 
-//		    } 
-//		} 
-
-		function changeOrientation( $print ){  
-			  var width = document.documentElement.clientWidth;
-			  var height =  document.documentElement.clientHeight;
-//			  if( width < height ){
-//				  console.log(width + " " + height);
-//				  $print.width(height);
-//				   $print.height(width);
-//				  $print.css('top',  (height-width)/2 );
-//				  $print.css('left',  0-(height-width)/2 );
-//				  $print.css('transform' , 'rotate(90deg)');
-//				   $print.css('transform-origin' , '50% 50%');
-//			 } 
-		 
-		   	var evt = "onorientationchange" in window ? "orientationchange" : "resize";
-		      
-			window.addEventListener(evt, function() {
-			    console.log(evt);
-				setTimeout( function(){
-					var width = document.documentElement.clientWidth;
-					 var height =  document.documentElement.clientHeight;
-					 if( width > height ){
-					   
-						$print.width(width);
-						$print.height(height);
-						$print.css('top',  0 );
-						$print.css('left',  0 );
-						$print.css('transform' , 'none');
-						$print.css('transform-origin' , '50% 50%');
-					 }
-					 else{
-						$print.width(width);
-						$print.height(height);
-						$print.css('top',  0 );
-						$print.css('left',  0 );
-						$print.css('transform' , 'none');
-						$print.css('transform-origin' , '50% 50%');
-					 }
-					
-				}  , 100 );
-				
-				
+		<div id="tips-wraper">
+					<img src="img/tips.png"/>
+				</div>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(document).on("touchmove", function(event) {
+				event.preventDefault();
 			}, false);
-		}
+			
+			window.onpageshow = function (){
+				if (!window.sessionStorage.getItem("isClick")){
+					document.location.reload();
+				}
+				$(".game-goods-list").hide();
+				$('#game-btn').show();
+				$('#tips-wraper').hide();
+			}
+			
+			$.extend({
+				luckGame: function(options) {
+					var defaults = {
+						'gameLen': '18',
+						'game_pagesize': 10, //生成多少圈同样的东西
+						'zj_arr': { //中奖数组，第一个表示是否中奖，第二个中奖号码
+							'is_win': 1,
+							'number': 17
+						}
+					};
+					var settings = $.extend(defaults, options);
+					w_config = {
+						'w': $(window).width(),
+						'h': $(window).height()
+					}
+					var gameArr = [];
+					var gameLen = settings.gameLen;
+					var game_list_h = '';
+					var game_init = [];
+					var game_list_item_h = 0;
 
-		changeOrientation($('#orientationContainer'));
-	</script>
-</body>
+					//每次进来随机3个数字，来启动当前的选择的状态
+					for(var i = 0; i < 3; i++) {
+
+						game_init.push(Math.floor(Math.random() * gameLen));
+					}
+					createGame();
+					$(window).resize(function() {
+
+						createGame();
+					})
+
+					function createGame() {
+						getHeight();
+						setLi();
+						pushLi(gameArr);
+						start();
+					}
+
+					function getHeight() {
+						if($(window).width() > $(window).height()) {
+							w_config = {
+								'w': $(window).width(),
+								'h': $(window).height()
+							}
+							if ($(window).height() > 720){
+								//iphoneX
+								game_list_item_h = (w_config.w * 320 / 750 * 0.5 * 0.6).toFixed(2);
+							}else{
+								game_list_item_h = (w_config.w * 320 / 750 * 0.5 * 0.7).toFixed(2);
+							}
+						} else {
+							w_config = {
+								'w': $(window).height(),
+								'h': $(window).width()
+							}
+							if ($(window).height() > 720){
+								//iphoneX
+								game_list_item_h = (w_config.w * 320 / 750 * 0.5 * 0.7).toFixed(2);
+							}else{
+								game_list_item_h = (w_config.w * 320 / 750 * 0.5 * 0.8).toFixed(2);
+							}
+//							game_list_item_h = (w_config.w * 320 / 750 * 0.5 * 0.8).toFixed(2);
+						}
+
+					}
+
+					//设置奖品
+					function setLi() {
+
+						for(var j = 1; j <= settings.game_pagesize; j++) {
+							for(var i = 1; i <= gameLen; i++) {
+								gameArr.push({
+									'type': j,
+									'index': i,
+									'src1': 'img/' + i + '.png',
+									'src2': 'img/' + i + 'f.png',
+									'src3': 'img/' + i + 't.png'
+								});
+							}
+						}
+
+					}
+					//写入，初始化奖品的滚动
+					function pushLi(arr) {
+						//		          	console.log(game_list_item_h);
+						var html_str1 = '';
+						var html_str2 = '';
+						var html_str3 = '';
+						for(var i = 0; i < arr.length; i++) {
+							html_str1 += '<li style="height:' + game_list_item_h + 'px" data-index="' + arr[i]['index'] + '" data-type="' + arr[i]['type'] + '"><img src="' + arr[i]['src1'] + '"></li>';
+							html_str2 += '<li style="height:' + game_list_item_h + 'px" data-index="' + arr[i]['index'] + '" data-type="' + arr[i]['type'] + '"><img src="' + arr[i]['src2'] + '"></li>';
+							html_str3 += '<li style="height:' + game_list_item_h + 'px" data-index="' + arr[i]['index'] + '" data-type="' + arr[i]['type'] + '"><img src="' + arr[i]['src3'] + '"></li>';
+						}
+						$(".game-goods-ul").each(function(e) {
+							$("#game1 .game-goods-ul").empty().append(html_str1);
+							$("#game2 .game-goods-ul").empty().append(html_str2);
+							$("#game3 .game-goods-ul").empty().append(html_str3);
+							game_list_h = $(this).height();
+							//		          		console.log('game_list_item_h',game_init);
+							y = game_list_item_h * game_init[e];
+
+							$(this).css({
+								'transition-duration': '0ms',
+								'transform': 'translate(0px, -' + y + 'px) translateZ(0px)'
+							})
+						});
+
+					}
+
+					function start() {
+						$(".game-btn").click(function() {
+							window.sessionStorage.removeItem("isClick");
+							$(".game-goods-list").show(200);
+							$('#game-btn').hide();
+							//如果中奖
+							if(settings.zj_arr.is_win == 1) {
+
+								$(".game-goods-ul").each(function(e) {
+
+									setTimeout(function() {
+										y = (settings.zj_arr.number + settings.gameLen * (settings.game_pagesize - 1)) * game_list_item_h;
+										$(".game-goods-ul").eq(e).css({
+											'transition-duration': '5000ms',
+											'transition-delay': '500ms',
+											'transform': 'translate(0px, -' + y + 'px) translateZ(0px)'
+										})
+									}, e * 300);
+									//判断最后面是否完毕
+									$("#game3").find(".game-goods-ul").on("webkitTransitionEnd", function() {
+										y = settings.zj_arr.number * game_list_item_h;
+										$(".game-goods-ul").css({
+											'transition-duration': '0ms',
+											'transform': 'translate(0px, -' + y + 'px) translateZ(0px)'
+										})
+										$("#game3").find(".game-goods-ul").unbind("webkitTransitionEnd");
+									})
+								})
+
+							} else {
+
+								numrand = randNum2();
+								//		          			console.log(numrand);
+								//不中奖的时候
+								$(".game-goods-ul").each(function(e) {
+									y2 = (numrand[0]) * game_list_item_h;
+									y3 = (numrand[1]) * game_list_item_h;
+									y4 = (numrand[2]) * game_list_item_h;
+									setTimeout(function() {
+										y = (numrand[e] + settings.gameLen * (settings.game_pagesize - 1)) * game_list_item_h;
+										$(".game-goods-ul").eq(e).css({
+											'transition-duration': '5000ms',
+											'transition-delay': '500ms',
+											'transform': 'translate(0px, -' + y + 'px) translateZ(0px)'
+										})
+									}, e * 300);
+									//判断最后面是否完毕
+									$("#game3").find(".game-goods-ul").on("webkitTransitionEnd", function() {
+
+										$(".game-goods-ul").eq(2).css({
+											'transition-duration': '00ms',
+											'transform': 'translate(0px, -' + y4 + 'px) translateZ(0px)'
+										})
+										$("#game3").find(".game-goods-ul").unbind("webkitTransitionEnd");
+									})
+									$("#game2").find(".game-goods-ul").on("webkitTransitionEnd", function() {
+
+										$(".game-goods-ul").eq(1).css({
+											'transition-duration': '00ms',
+											'transform': 'translate(0px, -' + y3 + 'px) translateZ(0px)'
+										})
+										$("#game2").find(".game-goods-ul").unbind("webkitTransitionEnd");
+									})
+									$("#game1").find(".game-goods-ul").on("webkitTransitionEnd", function() {
+
+										$(".game-goods-ul").eq(0).css({
+											'transition-duration': '00ms',
+											'transform': 'translate(0px, -' + y2 + 'px) translateZ(0px)'
+										})
+										$("#game1").find(".game-goods-ul").unbind("webkitTransitionEnd");
+									})
+								})
+
+							}
+
+						})
+					}
+
+					function randNum2() {
+						a = Math.floor(Math.random() * gameLen);
+						b = Math.floor(Math.random() * gameLen);
+						c = Math.floor(Math.random() * gameLen);
+						arr = [];
+						if(a == b) {
+							return randNum2();
+						} else {
+							return arr = [a, b, c];
+						}
+					}
+				}
+			});
+			
+			
+			$(function() {
+				
+				window.sessionStorage.setItem("isClick","1");
+				
+				var random_num = Math.floor(Math.random() * 2);
+				//			 console.log(random_num);
+				$.luckGame({
+					'zj_arr': {
+						'is_win': 1,
+						'number': random_num //从0算起，就是10了(控制第几个中奖)
+					},
+					gameLen: 9, //产品抽奖数量，
+					game_pagesize: 9
+				});
+				
+				//判断最后面是否完毕（弹弹窗跳转）
+				$("#game3").find(".game-goods-ul").on("webkitTransitionEnd", function() {
+					setTimeout(function (){
+						$("#tips-wraper").show();
+					},500);
+					
+					setTimeout(function() {
+						if (random_num = 0){
+							//一等奖
+							window.location = "https://detail.tmall.com/item.htm?spm=a1z10.3-b-s.w4011-14988931522.62.560d24381Fp6e7&id=532706024874&rn=5fdae0109cac8c44295042039bf0cb36&abbucket=3";
+						}else if(random_num = 1){
+							//二等奖
+							window.location = "https://detail.tmall.com/item.htm?spm=a1z10.3-b-s.w4011-14988931522.80.560d24381Fp6e7&id=2536793731&rn=5fdae0109cac8c44295042039bf0cb36&abbucket=3";
+						}else{
+							//三等奖
+							window.location = "https://detail.tmall.com/item.htm?spm=a1z10.3-b-s.w4011-14988931522.209.560d24381Fp6e7&id=548107772235&rn=5fdae0109cac8c44295042039bf0cb36&abbucket=3";
+						}
+					}, 2000);
+				})
+
+			})
+		</script>
+		<script type="text/javascript">
+			//判断屏幕方向
+			//		if(window.orientation==90||window.orientation==-90){
+			//		    alert("横屏状态！")
+			//		}
+
+			//		//监听屏幕方向
+			//		window.onorientationchange = function(){ 
+			//		    switch(window.orientation){ 
+			//		        case -90: 
+			//		        case 90: 
+			////		            alert("横屏:" + window.orientation);
+			//		        case 0: 
+			//		        case 180: 
+			////		             alert("竖屏:" + window.orientation);
+			//		        break; 
+			//		    } 
+			//		} 
+
+			function changeOrientation($print,$img) {
+				var width = document.documentElement.clientWidth;
+				var height = document.documentElement.clientHeight;
+				//			  console.log(width);
+				if(width < height) {
+					//				  console.log(width + " " + height);
+					$print.width(height);
+					$print.height(width);
+					$print.css('top', (height - width) / 2);
+					$print.css('left', 0 - (height - width) / 2);
+					$print.css('transform', 'rotate(90deg)');
+					$print.css('transform-origin', '50% 50%');
+					$img.css('transform', 'rotate(90deg)');
+				}else{
+					$print.width(width);
+					$print.height(height);
+					$print.css('top', 0);
+					$print.css('left', 0);
+					$print.css('transform', 'none');
+					$print.css('transform-origin', '50% 50%');
+					$img.css('transform', 'none');
+				}
+
+				var evt = "onorientationchange" in window ? "orientationchange" : "resize";
+
+				window.addEventListener(evt, function() {
+					//			    console.log(evt);
+					setTimeout(function() {
+						var width = document.documentElement.clientWidth;
+						var height = document.documentElement.clientHeight;
+						if(width > height) {
+
+							$print.width(width);
+							$print.height(height);
+							$print.css('top', 0);
+							$print.css('left', 0);
+							$print.css('transform', 'none');
+							$print.css('transform-origin', '50% 50%');
+							$img.css('transform', 'none');
+						} else {
+							$print.width(height);
+							$print.height(width);
+							$print.css('top', (height - width) / 2);
+							$print.css('left', 0 - (height - width) / 2);
+							$print.css('transform', 'rotate(90deg)');
+							$print.css('transform-origin', '50% 50%');
+							$img.css('transform', 'rotate(90deg)');
+						}
+
+					}, 500);
+
+				}, false);
+			}
+
+			changeOrientation($('#orientationContainer'),$('#tips-wraper img'));
+		</script>
+	</body>
+
 </html>
